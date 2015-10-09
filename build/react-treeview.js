@@ -105,16 +105,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    var arrowClassName = 'tree-view_arrow';
 	    var containerClassName = 'tree-view_children';
+	    var itemClassName = 'tree-view_item';
 	    if (collapsed) {
 	      arrowClassName += ' tree-view_arrow-collapsed';
 	      containerClassName += ' tree-view_children-collapsed';
+	      itemClassName += ' collapsed';
 	    }
 	
 	    var arrow = _react2['default'].createElement(
 	      'div',
 	      _extends({}, rest, {
-	        className: className + ' ' + arrowClassName,
-	        onClick: this.handleClick }),
+	        className: className + ' ' + arrowClassName }),
 	      '▾'
 	    );
 	
@@ -123,7 +124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      { className: 'tree-view' },
 	      _react2['default'].createElement(
 	        'div',
-	        { className: 'tree-view_item' },
+	        { className: itemClassName, onClick: this.handleClick },
 	        arrow,
 	        nodeLabel
 	      ),

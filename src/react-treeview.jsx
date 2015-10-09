@@ -29,22 +29,23 @@ const TreeView = React.createClass({
 
     let arrowClassName = 'tree-view_arrow';
     let containerClassName = 'tree-view_children';
+    let itemClassName = 'tree-view_item';
     if (collapsed) {
       arrowClassName += ' tree-view_arrow-collapsed';
       containerClassName += ' tree-view_children-collapsed';
+      itemClassName += ' collapsed'
     }
 
     const arrow =
       <div
         {...rest}
-        className={className + ' ' + arrowClassName}
-        onClick={this.handleClick}>
+        className={className + ' ' + arrowClassName}>
         ▾
       </div>;
 
     return (
       <div className="tree-view">
-        <div className="tree-view_item">
+        <div className={itemClassName} onClick={this.handleClick}>
           {arrow}
           {nodeLabel}
         </div>
